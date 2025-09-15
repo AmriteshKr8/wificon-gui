@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+INSTALL_DIR="$HOME/.local/bin"
+APP_DIR="$HOME/.local/share/applications"
+ICON_DIR="$HOME/.local/share/icons"
+SCRIPT_NAME="wificon"
+PYTHON_FILE="wificon.py"
+DESKTOP_FILE="wificon.desktop"
+ICON_FILE="wificon.png"
+
+echo "[*] Removing wificon..."
+rm -f "$INSTALL_DIR/$SCRIPT_NAME" \
+      "$INSTALL_DIR/$PYTHON_FILE" \
+      "$APP_DIR/$DESKTOP_FILE" \
+      "$ICON_DIR/$ICON_FILE"
+
+echo "[✓] wificon has been uninstalled."

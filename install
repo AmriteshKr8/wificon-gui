@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Install script for WiFiCon
+
+# Paths
+BIN_DIR="$HOME/.local/bin"
+APP_DIR="$HOME/.local/share/applications"
+ICON_DIR="$HOME/.local/share/icons"
+
+# Ensure dirs exist
+mkdir -p "$BIN_DIR" "$APP_DIR" "$ICON_DIR"
+
+# Copy python script
+cp wificon.py "$BIN_DIR/wificon.py"
+chmod +x "$BIN_DIR/wificon.py"
+
+# Copy icon (make sure you have wificon.png in the same folder as this script)
+cp wificon.png "$ICON_DIR/wificon.png"
+
+# Create .desktop file
+cat > "$APP_DIR/wificon.desktop" <<EOF
+[Desktop Entry]
+Type=Application
+Name=WiFiCon
+Exec=python3 $BIN_DIR/wificon.py
+Icon=$ICON_DIR/wificon.png
+Terminal=false
+Categories=Network;Utility;
+EOF
+
+# Update desktop database
+update-desktop-database "$APP_DIR"
+
+echo "✅ WiFiCon installed! You can now find it in your start menu."

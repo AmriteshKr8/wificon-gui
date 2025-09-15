@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=WiFiCon
+Exec=python3 /home/$USER/.local/bin/wificon.py
+Icon=/home/$USER/.local/share/icons/wificon.png
+Terminal=false
+Categories=Network;Utility;
