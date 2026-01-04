@@ -86,7 +86,8 @@ def connect_network():
     else:
         dark_messagebox("Connection Failed", f"Could not connect to {ssid}\n\nError:\n{out.stderr}", "error")
 
-root = tk.Tk()
+#root = tk.Tk()
+root = tk.Tk(className='wificon')
 root.title("Wificon")
 root.geometry("420x320")
 root.configure(bg=BG_COLOR)
